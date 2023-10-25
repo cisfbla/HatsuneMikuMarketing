@@ -11,3 +11,7 @@ body {
     background-image: linear-gradient(to bottom right, var(--prime_color), var(--secondary_color));
     color:white;
 }
+
+#test {
+    font-size: 180px;
+}
