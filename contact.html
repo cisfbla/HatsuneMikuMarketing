@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+
+<body onload="update_quant_item_cart()">
+  <script src="js/cart.js"></script>
+  <div class="hamburger">
+    <div class="overlay" id="overlay"></div>
+
+    <div id="panel-side" style="display:none;"></div>
+    <script src="js/hamborgor.js"></script>
+  </div>
+
+  <!--- Site Header --->
+  <div class="grey-box">
+    <div class="logo">
+      <a class="miku-flip" onclick="open_dropburger()">
+        <img class="miku-box" src="Source_Files/mikubit.png">
+      </a>
+      <a>
+        <h1 class="miku-text">Miku Marketing LLC.</h1>
+      </a>
+      <div class="cart-container">
+        <a class="cart-icon" href="/cart.html">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cart_count">0</span>
+        </a>
+      </div>
+    </div>
+
+    <div id="links">
+      <a class="side-panel-text" href="index.html">Home</a>
+      <a class="side-panel-text" href="about.html">About</a>
+      <a class="side-panel-text" href="services.html">Services</a>
+      <a class="side-panel-text" href="contact.html">Contact</a>
+    </div>
+    <div class="dropdown-test">
+      <div onclick="open_dropburger()" class="dropdown-arrow">
+        <a class="drop-flip">^</a>
+      </div>
+    </div>
+
+
+    <script src="/js/dropdown.js"></script>
+  </div>
+
+  <div class="arrow">
+    <button class="arrow-button" onclick="goBack()">QBack</button>
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+    </script>
+  </div>
+
+	<div class="contact-graphic">
+    
+    <div class="contact-txt-container">
+      <h1 class="contact-txt">Interested in Marketing?<br>Look no further...</h1>
+    </div>
+    
+    <div class="contact-img-container">
+      <img class="contact-img" src="Source_Files/mikuIndex.png">
+    </div>
+
+  </div>
+
+  <div class="lower-contact-div">
+    <div class="FAQs-container">
+      <div class="FAQs">
+        <div class="FAQs-header-container">
+          <h1 class="FAQs-header">FAQs</h1>
+        </div>
+        <div class="FAQs-text-container"> 
+          <h1 class="FAQs-question">Where are we located?</h1>
+          <hr/>
+          <p class="FAQs-answer">Miku Marketing actually does not have a physical location! We are backed by hard workers across the state.</p>
+
+          <h1 class="FAQs-question">Do we offer vocaloid technology?</h1>
+          <hr/>
+          <p class="FAQs-answer">We do NOT have the digital rights to Hatsune Miku's vocal synthesizer and do not endorse digital piracy.</p>
+          <h1 class="FAQs-question">Could I join the Miku team?</h1>
+          <hr/>
+          <p class="FAQs-answer">We are not accepting any applications at this time.</p>
+
+          <h1 class="FAQs-question">Are we associated with Hatsune Miku brand?</h1>
+          <hr/>
+          <p class="FAQs-answer">We have no association with Hatsune Miku music or any other vocaloids.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-container">
+      <div class="contact">
+        <div class="contact-header-container">
+          <h1 class="contact-header">Contact Us!</h1>
+          <div class="contact-txt-container">
+            <label for="email"></label>
+            <input type="text" id="email" name="emailaddr" placeholder="Your email...">
+
+            <label for="subject"></label>
+            <input type="text" id="sub" name="subject" placeholder="Message Subject...">
+
+            <label for="txt"></label>
+            <textarea id="txt" name="text" placeholder="Tell us about you!" style="height:200px"></textarea>
+
+            <input type="submit" value="Submit" onclick="refreshPage(); alert(`Message Recieved. we Will reach out in 5-6 Business Days`);">
+          </div>
+
+          <script>
+            function refreshPage(){
+                window.location.reload();
+            } 
+          </script>
+          
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="site-footer-unique">
+    <img class="miku-footer" src="https://foxtrot.nyacat.moe/art/sprites/mikubit.png">
+    <p class="miku-footer-txt">© 2023 Miku Marketing LLC. </p>
+    <p>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="copyright.html">Copyright</a>
+    </p>
+    <p style="font-size:0.5vw;">Disclaimer: Miku Marketing is not a real business, this site is for use in website building competition ONLY. All rights reserved by their original creators</p>
+  </div>
+</body>
+
+</html>

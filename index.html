@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--- Link CSS, Character Set, Title and Tab Image --->
+
+<head>
+
+	<link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<title>Miku Marketing LLC.</title>
+	<link rel="icon" href="Source_Files/mikubit.ico" type="image/x-icon">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+
+<body onload="update_quant_item_cart()">
+  <script src="js/cart.js"></script>
+	<div id="screen_part"></div>
+	<div id="start_screen">
+		<video id="intro_video" autoplay="" muted="" onended="close_intro()">
+			Your browser does not support the video tag.
+		</video>
+	</div>
+
+	<script>
+		function close_intro() {
+			document.getElementById("start_screen").style = "display:none;"
+		}
+		{ //for page startup
+			var intros = ["Source_Files/video/video.webm","Source_Files/video/fall.webm"]
+
+			var awa = document.createElement("source")
+
+			awa.src = intros[(Math.floor(Math.random() * intros.length))]
+			awa.type = "video/webm"
+
+			document.getElementById("intro_video").appendChild(awa)
+
+			// const socket = io();
+			// var jump_page = document.getElementById("jump_page");
+		}
+	</script>
+
+	<!--- Hamburger --->
+	<div class="hamburger">
+		<div class="overlay" id="overlay"></div>
+
+		<div id="panel-side" style="display:none;"></div>
+		<script src="js/hamborgor.js"></script>
+	</div>
+
+	<!--- Site Header --->
+	<div class="grey-box">
+		<div class="logo">
+			<a class="miku-flip" onclick="open_dropburger()">
+				<img class="miku-box" src="Source_Files/mikubit.png">
+			</a>
+			<a>
+				<h1 class="miku-text">Miku Marketing LLC.</h1>
+			</a>
+      <div class="cart-container">
+        <a class="cart-icon" href="/cart.html">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cart_count">0</span>
+        </a>
+      </div>
+		</div>
+
+		<div id="links">
+			<a class="side-panel-text" href="index.html">Home</a>
+			<a class="side-panel-text" href="about.html">About</a>
+			<a class="side-panel-text" href="services.html">Services</a>
+			<a class="side-panel-text" href="contact.html">Contact</a>
+		</div>
+		<div class="dropdown-test">
+			<div onclick="open_dropburger()" class="dropdown-arrow">
+				<a class="drop-flip">^</a>
+			</div>
+		</div>
+
+
+		<script src="/js/dropdown.js"></script>
+	</div>
+
+	<!--- What is Miku Marketing? --->
+	<div class="content">
+		<div class="mikustuff">
+			<img id="Hatsunemikuuu" src="Source_Files/mikuIndex.png">
+			<div class="miku-description-box">
+
+				<!-- Box Header -->
+				<h1 id="Miku-Description-Header">
+					What is Miku Marketing?
+				</h1>
+
+				<!-- Box Text -->
+				<p id="Miku-Description-Text">Hatsune Miku, officially code-named CV01, is a Vocaloid software voicebank
+					developed by Crypton Future Media and its official anthropomorphic mascot character, a girl with
+					long, turquoise twintails. Miku's personification has been marketed as a virtual idol, and has
+					performed at live virtual concerts onstage as an animated projection. Hatsune Miku has inspired
+					millions of people through the internet, let us do that for you.</p>
+
+				<!-- Glowing Button -->
+				<a class="glowing-button" href="about.html">
+					<p class="glowing-button-text">Learn More</p>
+				</a>
+
+				<!-- Star Animation -->
+				<svg version="1.1" class="star" xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 256 256"
+					enable-background="new 0 0 256 256" xml:space="preserve">
+					<path
+						d="M128,70.3l18.6,43.8l47.5,4.1l-36,31.3L161,162l7.9,34L128,171.3l-40.8,24.6l7.9-34l2.9-12.5l-36.1-31.2l47.5-4.1l5-11.8L128,70.3 M128,15.9L94.9,94.1L10,101.4l64.4,55.8l-19.3,82.9l72.9-44l72.9,44l-19.3-82.9l64.4-55.8l-84.9-7.3L128,15.9L128,15.9z">
+					</path>
+				</svg>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Background Animations -->
+	<div id="awa">
+		<script>
+			//this is what drops miku, chickinugets, and leeekies
+			var chickins = document.getElementById("awa")
+			var sacrificed = 30;
+			var what = "";
+
+			var url = ["https://foxtrot.nyacat.moe/art/sprites/mikubit.png", "https://foxtrot.nyacat.moe/art/sprites/leeak.png", "https://foxtrot.nyacat.moe/art/sprites/luma.png"]
+
+			// "https://www.seekpng.com/png/full/70-708103_tater-tots-png-image-chicken-nugget-transparent.png"
+
+			for (var i = 0; i < sacrificed; i++) {
+				const randomUrl = url[Math.floor(Math.random() * url.length)];
+				const leftPosition = i * 60 + Math.random() * 40;
+				const animationDuration = Math.random() * 5 + 9;
+				what += `\n<img src="${randomUrl}" style="left:${leftPosition}px; animation: ayyo ${animationDuration}s normal infinite;">`;
+			}
+			chickins.innerHTML = what
+
+			function goBack() {
+				window.history.back();
+			}
+
+			function animate() {
+
+				analyser.getByteFrequencyData(dataArray);
+				document.getElementById("Hatsunemikuuu").style.transform = `skewX(${dataArray[2] * 0.01 + 1}deg)`;
+				console.log(dataArray[5]);
+				requestAnimationFrame(animate);
+			}
+
+			animate();
+
+		</script>
+	</div>
+
+	<!--- Play Music on Site Load --->
+	<div id="music">
+		<audio id="sound" autoplay>
+			<source src="Source_Files/miku" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+		<script>
+			function playSound() {
+				const audio = document.getElementById('sound');
+				audio.play();
+			}
+			window.addEventListener('load', playSound);
+		</script>
+
+		<!-- uncomment for audio
+
+		<script>
+			let audio1 = new Audio();
+			audio1.src = "Source_Files/ievanpolkka.mp3";
+
+			const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+			let audioSource = null;
+			let analyser = null;
+
+			audio1.play();
+			audioSource = audioCtx.createMediaElementSource(audio1);
+			analyser = audioCtx.createAnalyser();
+			audioSource.connect(analyser);
+			analyser.connect(audioCtx.destination);
+			analyser.fftSize = 128;
+			const bufferLength = analyser.frequencyBinCount;
+			const dataArray = new Uint8Array(bufferLength);
+		</script>
+
+		-->
+
+	</div>
+
+	<!-- What is Miku? -->
+	<div class="infostuff">
+		<img class="chibi4" src="Source_Files/hatsuneChibi4.png">
+		<li style="display: block;">
+			<h1>
+				What is Miku?
+			</h1>
+			<p>Hatsune Miku is a virtual pop star created using Vocaloid technology, known for her iconic appearance
+				with turquoise pigtails. She's an open-source character, allowing fans to create their own music and
+				content with her voicebank. Miku has become a global cultural icon, with holographic concerts,
+				collaborations, and a dedicated fanbase, making her a symbol of the virtual pop culture movement.</p>
+		</li>
+	</div>
+
+	<!--- Miku Marketing LLC. --->
+	<div class="mikuMarketing">
+		<div class="infostuff" style="background-color:#800f31; color: white;">
+			<li style="display: block;">
+				<h1>Miku Marketing LLC.<br></h1>
+				<p>Miku, known for her virtual pop star persona, represents innovation, digital culture, and a youthful,
+					energetic
+					spirit. She's a symbol of creativity and uniqueness. By having Miku as our representative, we tap
+					into her
+					appeal and help your brand connect with a tech-savvy, internet-driven audience. Miku will also make
+					appearances
+					at select events, symbolizing your brand's commitment to staying relevant and engaging.</p>
+			</li>
+			<img class="chibi4" src="Source_Files/mikuPic1.png">
+		</div>
+	</div>
+
+	<!--- Miku as the Brand Ambassador --->
+	<div class="infostuff" style="background-color: #26d6ed; color: #fff;">
+		<img class="chibi4"
+			src="https://freepngimg.com/download/hatsune_miku/28829-1-hatsune-miku-transparent-image.png">
+		<li style="display: block;">
+			<h1>
+				Miku as the Brand Ambassador
+			</h1>
+			<p>Miku is an exceptional brand ambassador due to her unique blend of digital artistry and pop culture
+				relevance. As a virtual pop star, she embodies innovation and creativity in the digital age,
+				resonating with a
+				global and tech-savvy audience. Miku's iconic status as a symbol of limitless creative potential,
+				coupled with
+				her ability to transcend language barriers and cultural boundaries, makes her an ideal
+				representative for any
+				brand seeking to connect with a younger, forward-thinking demographic. Her image conveys a sense of
+				authenticity, youthful energy, and a commitment to staying at the forefront of the digital world,
+				making her a
+				compelling choice to drive engagement, foster innovation, and capture the imagination of a diverse
+				and
+				contemporary market.</p>
+		</li>
+	</div>
+
+	<!--- Site Footer --->
+  <div class="site-footer-unique">
+    <img class="miku-footer" src="https://foxtrot.nyacat.moe/art/sprites/mikubit.png">
+    <p class="miku-footer-txt">© 2023 Miku Marketing LLC. </p>
+    <p>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="copyright.html">Copyright</a>
+    </p>
+  </div>
+</body>
+
+</html>

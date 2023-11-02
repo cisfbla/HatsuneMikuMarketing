@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+
+<body onload="update_quant_item_cart()">
+
+  <div class="hamburger">
+    <div class="overlay" id="overlay"></div>
+
+    <div id="panel-side" style="display:none;"></div>
+    <script src="js/hamborgor.js"></script>
+  </div>
+
+  <!--- Site Header --->
+  <div class="grey-box">
+    <div class="logo">
+      <a class="miku-flip" onclick="open_dropburger()">
+        <img class="miku-box" src="Source_Files/mikubit.png">
+      </a>
+      <a>
+        <h1 class="miku-text">Miku Marketing LLC.</h1>
+      </a>
+      <div class="cart-container">
+        <a class="cart-icon" href="/cart.html">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cart_count">0</span>
+        </a>
+      </div>
+    </div>
+
+    <div id="links">
+      <a class="side-panel-text" href="index.html">Home</a>
+      <a class="side-panel-text" href="about.html">About</a>
+      <a class="side-panel-text" href="services.html">Services</a>
+      <a class="side-panel-text" href="contact.html">Contact</a>
+    </div>
+    <div class="dropdown-test">
+      <div onclick="open_dropburger()" class="dropdown-arrow">
+        <a class="drop-flip">^</a>
+      </div>
+    </div>
+
+
+    <script src="/js/dropdown.js"></script>
+  </div>
+
+	<div class="arrow">
+		<button class="arrow-button" onclick="goBack()">QBack</button>
+		<script>
+			function goBack() {
+				window.history.back();
+			}
+		</script>
+	</div>
+
+	<div class="plans">
+		<div class="bronze-container">
+			<div class="bronze">
+				<div class="price-tag-container-bronze">
+					<h2 class="price-tag-bronze">$20,000</h2>
+        </div>
+        <div class="package-tier-container-bronze">
+          <h1 class="package-tier-bronze">Bronze</h1>
+        </div>
+			</div>
+        
+      <div class="bronze-textbox-container">
+        <div class="bronze-text-container">
+          <p class="bronze-text">
+            <ul class="services-plans">
+              <li class="green-check">
+                <p class="plans-desc-text">5 Ads</p>
+              </li>
+              <li class="green-check">
+                <p class="plans-desc-text">Miku promotes your product</p>
+              </li>
+              <li class="red-x">
+                <p class="plans-desc-text">Premium Business Support</p>
+              </li>
+              <li class="red-x">
+                <p class="plans-desc-text">Rights Retainment</p>
+              </li>
+              <li class="red-x">
+                <p class="plans-desc-text">Premium Voice Acting and Production</p>
+              </li>
+              <li class="red-x">
+                <p class="plans-desc-text">Live Event Hosted by Miku</p>
+              </li>
+              <li>
+                <a href="cart.html" style="text-decoration:none;">
+                  <div class="add-to-cart-plans" onclick="add_to_cart(`Bronze Plan`, `Source_Files/mikubit.png`, 20000, 1); update_quant_item_cart();">
+                    <p class="add-to-cart-plans-txt">Add to Cart</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </p>
+        </div>
+      </div>
+		</div>
+
+    <!-- This contains the Price Tag and Tier -->
+		<div class="gold-container"> <!--- Contains the Border -->
+			<div class="gold"> <!-- Background Color at the top -->
+        <!-- Div contains price tag for flexing -->
+        <div class="price-tag-container-gold">
+          <p class="price-tag-gold">$150,000</p>
+        </div>
+        <!-- Div contains package for flexing -->
+				<div class="package-tier-container-gold">
+          <p class="package-tier-gold">Gold</p>
+        </div>
+      </div>
+
+      <div class="gold-textbox-container">
+        <div class="gold-text-container">
+          <p class="gold-text">
+            <ul class="services-plans">
+              <li class="green-check">
+                <p class="plans-desc-text">15 Ads</p>
+              </li>
+              <li class="green-check">
+                <p class="plans-desc-text">Miku promotes your product</p>
+              </li>
+              <li class="green-check">
+                <p class="plans-desc-text">Premium Business Support</p>
+              </li>
+              <li class="green-check">
+                <p class="plans-desc-text">Rights Retainment</p>
+              </li>
+              <li class="red-x">
+                <p class="plans-desc-text">Premium Voice Acting and Production</p>
+              </li>
+              <li class="red-x">
+                <p class="plans-desc-text">Live Event Hosted by Miku</p>
+              </li>
+              <a href="cart.html" style="text-decoration:none;">
+                <div class="add-to-cart-plans" onclick="add_to_cart(`Gold Plan`, `Source_Files/mikubit.png`, 150000, 1); update_quant_item_cart();">
+                  <p class="add-to-cart-plans-txt">Add to Cart</p>
+                </div>
+              </a>
+            </ul>
+          </p>
+        </div>
+      </div>
+      
+      <!-- Contains the Code for the Box Below the gold-tag-container -->     
+		</div>
+    <div class="diamond-container">
+      <div class="diamond">
+        <div class="price-tag-container-diamond">
+          <h2 class="price-tag-diamond">$350,000</h2>
+        </div>
+        <div class="package-tier-container-diamond">
+          <h1 class="package-tier-diamond">Diamond</h1>
+        </div>
+      </div>
+
+
+      <div class="diamond-textbox-container">
+        <div class="diamond-text-container">
+          <p class="diamond-text">
+          </p>
+          <ul class="services-plans" style="margin-left: 5%;">
+            <li class="green-check">
+              <p class="plans-desc-text">25 Ads</p>
+            </li>
+            <li class="green-check">
+              <p class="plans-desc-text">Miku promotes your product</p>
+            </li>
+            <li class="green-check">
+              <p class="plans-desc-text">Premium Business Support</p>
+            </li>
+            <li class="green-check">
+              <p class="plans-desc-text">Rights Retainment</p>
+            </li>
+            <li class="green-check">
+              <p class="plans-desc-text">Premium Voice Acting and Production</p>
+            </li>
+            <li class="green-check">
+              <p class="plans-desc-text">Live Event Hosted by Miku</p>
+            </li>
+            <a href="cart.html" style="text-decoration:none;">
+              <div class="add-to-cart-plans" onclick="add_to_cart(`Diamond Plan`, `Source_Files/mikubit.png`, 350000, 1); update_quant_item_cart();">
+                <p class="add-to-cart-plans-txt">Add to Cart</p>
+              </div>
+            </a>
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="enterprise-plan-container">
+    <div class="enterprise-plan">
+      <img src="Source_Files/hatsuneChibi4.png">
+      <div class="enterprise-text-container">
+        <h1 class="enterprise-header">Enterprise Plans</h1>
+        <p class="enterprise-text">Interested in service that goes beyond our diamond package? Contact our Sales team for more information at sales@mikumarketing.store</p>
+      </div>
+    </div>
+  </div>
+	
+  <!--- Bottom Container --->
+	<div class="individual-products">
+    <!--- Sets Margins and Products for where boxes can be --->
+    <div class="products-box">
+      <!--- Space for Product(s) --->
+      <div class="product">
+        <div class="product-img-container">
+          <img class="product-img" src="Source_Files/services-pictures/services-pic-1.png">
+        </div>
+        <div class="product-txt-div">
+          <h1 class="product-header">Simple Ad with Miku</h1>
+          <p class="product-desc">One premium thirty second ad featuring virtual artist Hatsune Miku where she will advertise your product</p>
+        </div>
+        <div class="product-info-container">
+          <div class="product-info">
+            <p class="product-cost">$15,000</p>
+            <div class="add-to-cart" onclick="add_to_cart(`Simple Miku Ad`, `Source_Files/services-pictures/services-pic-1.png`, 15000, 1); update_quant_item_cart();">
+              <p class="add-to-cart-txt">Add to Cart</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product">
+        <div class="product-img-container">
+          <img class="product-img" src="Source_Files/services-pictures/services-pic-2.png">
+        </div>
+        <div class="product-txt-div">
+          <h1 class="product-header">Premium Advertisement </h1>
+          <p class="product-desc">One minute advertisement where Hatsune Miku, and one of her vocaloid friends, will be shown using your product</p>
+        </div>
+        <div class="product-info-container">
+          <div class="product-info" >
+            <p class="product-cost">$35,000</p>
+            <div class="add-to-cart" onclick="add_to_cart(`Premium Miku Ad`, `Source_Files/services-pictures/services-pic-2.png`, 35000, 1); update_quant_item_cart();">
+              <p class="add-to-cart-txt">Add to Cart</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product">
+        <div class="product-img-container">
+          <img class="product-img" src="Source_Files/services-pictures/services-pic-3.png">
+        </div>
+        <div class="product-txt-div">
+          <h1 class="product-header">Marathon Advertisement</h1>
+          <p class="product-desc">One five minute advertisement, where Miku will enact a written scene revolving around your product</p>
+        </div>
+        <div class="product-info-container">
+          <div class="product-info">
+            <p class="product-cost">$95,000</p>
+            <div class="add-to-cart" onclick="add_to_cart(`Marathon Advertisement`, `Source_Files/services-pictures/services-pic-3.png`, 95000, 1); update_quant_item_cart();">
+              <p class="add-to-cart-txt">Add to Cart</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product">
+        <div class="product-img-container">
+          <img class="product-img" src="Source_Files/services-pictures/services-pic-4.png">
+        </div>
+        <div class="product-txt-div">
+          <h1 class="product-header">Marathon+</h1>
+          <p class="product-desc">One five minute advertisement, where Miku and all of her vocaloid friends will act out a written scene revolving around your product</p>
+        </div>
+        <div class="product-info-container">
+          <div class="product-info">
+            <p class="product-cost">$150,000</p>
+            <div class="add-to-cart" onclick="add_to_cart(`Marathon+`, `Source_Files/services-pictures/services-pic-4.png`, 150000, 1); update_quant_item_cart();">
+              <p class="add-to-cart-txt">Add to Cart</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="services-questions">
+        <p class="services-questions-txt">Have more questions?<br><a href="contact.html">Contact Us</a></p>
+      </div>
+      
+      
+      <!-- Add to Cart Code -->
+      
+      
+      
+    </div>
+	</div>
+
+  <div class="site-footer-unique">
+    <img class="miku-footer" src="Source_Files/mikubit.png">
+    <p class="miku-footer-txt">© 2023 Miku Marketing LLC. </p>
+    <p>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="copyright.html">Copyright</a>
+    </p>
+    <p style="font-size:0.5vw;">Disclaimer: Miku Marketing is not a real business, this site is for use in website building competition ONLY. All rights reserved by their original creators</p>
+  </div>
+
+	<script src="js/cart.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<title>Miku Marketing LLC.</title>
+	<link rel="icon" href="Source Files/mikubit.ico" type="image/x-icon">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+
+<body id="about-page-body" onload="update_quant_item_cart()">
+	<script src="js/cart.js"></script>
+	<div class="hamburger">
+		<div class="overlay" id="overlay"></div>
+
+		<div id="panel-side" style="display:none;"></div>
+		<script src="js/hamborgor.js"></script>
+	</div>
+
+	<!--- Site Header --->
+	<div class="grey-box">
+		<div class="logo">
+			<a class="miku-flip" onclick="open_dropburger()">
+				<img class="miku-box" src="Source_Files/mikubit.png">
+			</a>
+			<a>
+				<h1 class="miku-text">Miku Marketing LLC.</h1>
+			</a>
+			<div class="cart-container">
+				<a class="cart-icon" href="/cart.html">
+					<i class="fas fa-shopping-cart"></i>
+					<span id="cart_count">0</span>
+				</a>
+			</div>
+		</div>
+
+		<div id="links">
+			<a class="side-panel-text" href="index.html">Home</a>
+			<a class="side-panel-text" href="about.html">About</a>
+			<a class="side-panel-text" href="services.html">Services</a>
+			<a class="side-panel-text" href="contact.html">Contact</a>
+		</div>
+		<div class="dropdown-test">
+			<div onclick="open_dropburger()" class="dropdown-arrow">
+				<a class="drop-flip">^</a>
+			</div>
+		</div>
+
+
+		<script src="/js/dropdown.js"></script>
+	</div>
+
+	<div class="about-top-graphic-container">
+		<iframe src="https://www.youtube.com/embed/VDubYY3VXYU?si=ZLt0sKtLASW3SyYB" frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share"></iframe>
+	</div>
+
+	<div class="lower-about-div">
+		<div class="about-header">
+			<h1>About Miku Marketing LLC.
+				<hr style="width:80%; border: 1px solid #00dbdb;">
+			</h1>
+		</div>
+		<div class="lower-about-div-content">
+
+			<div class="about-miku">
+				<div class="about-miku-img" style="border-top-left-radius: 25px; border-bottom-left-radius: 25px;">
+					<img src="Source_Files/bis.png">
+				</div>
+				<div class="about-miku-desc" style="border-top-right-radius: 25px; border-bottom-right-radius: 25px;">
+					<div class="about-miku-desc-txt">
+						<h1>Who is Miku? Why Should She Market my Business?</h1>
+						<p>Hatsune Miku is the logo of Japanese Vocaloid software CV-01. You may ask yourself, what is a
+							vocaloid? A vocaloid is a program that turns text into singing. You can think of it like
+							Siri, but she can sing! Hatsune Miku has experienced great success all over the globe. As a
+							matter of fact, according to 2023 analytics data gather by Google, Hatsune Miku is more
+							searched than Sonic the Hedgehog, and who doesn't know Sonic? Providing a familiar face for
+							your business, gives you a leg up on the competition!</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="about-miku">
+				<div class="about-miku-desc"
+					style="border-top-left-radius: 25px; border-bottom-left-radius: 25px; text-align: right;">
+					<div class="about-miku-desc-txt">
+						<h1>What is "Miku Marketing?"</h1>
+						<p>Miku Marketing using familar faces to advertise products at a substantially lower cost than
+							other popular celebrites. Studies show consumers are more likely to buy a product if it is
+							recommended to them by someone they know, even if that person is someone they have never
+							met. This is why you see celebrities always marketing products, and Hatsune Miku is no
+							different. However, because Hatsune Miku is not a real person, the cost is just the cost of
+							production! Get the superstar effect, without a superstar wallet.</p>
+					</div>
+				</div>
+				<div class="about-miku-img" style="border-top-right-radius: 25px; border-bottom-right-radius: 25px;">
+					<img src="Source_Files/what.png">
+				</div>
+			</div>
+
+			<div class="about-miku">
+				<div class="about-miku-img" style="border-top-left-radius: 25px; border-bottom-left-radius: 25px;">
+					<img src="Source_Files/mikubit.png">
+				</div>
+				<div class="about-miku-desc"
+					style="border-top-right-radius: 25px; border-bottom-right-radius: 25px; color:black;">
+					<div class="about-miku-desc-txt">
+						<h1>How do I navigate the site?</h1>
+						<p>We designed the site with user ease in mind. You can click on either the logo or dropdown
+							arrow to reveal buttons that will take you to the different pages. Ready to checkout? Go
+							ahead and click on the cart icon and it will take you to checkout! Still having trouble? You
+							can contact us at support@mikumarketing.store and we will reach out to you shortly!</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="about-more-questions" style="padding-bottom: 5vh; margin-bottom: 0px; display: flex;">
+				<div class="about-miku-desc-txt"
+					style="text-align:center; padding-top: 0.5%; display: flexbox; margin-bottom: 0px; padding-bottom: 0px; margin-top: 0px;">
+					<h1 style="font-size: 4vw; margin-bottom: 1vh; margin-top: 3vh;">Have more Questions?</h1>
+					<p class="services-questions-txt" style="margin-top: 5px; padding-top: 0px; text-align: center;"><a
+							href="contact.html">Contact Us</a></p>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="site-footer-unique">
+		<img class="miku-footer" src="https://foxtrot.nyacat.moe/art/sprites/mikubit.png">
+		<p class="miku-footer-txt">© 2023 Miku Marketing LLC. </p>
+		<p>
+			<a href="index.html">Home</a>
+			<a href="about.html">About</a>
+			<a href="services.html">Services</a>
+			<a href="contact.html">Contact</a>
+			<a href="copyright.html">Copyright</a>
+		</p>
+		<p style="font-size:0.5vw;">Disclaimer: Miku Marketing is not a real business, this site is for use in website
+			building competition ONLY. All rights reserved by their original creators</p>
+	</div>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="style.css">
+	<title>Miku Marketing LLC.</title>
+	<link rel="icon" href="Source_Files/mikubit.ico" type="image/x-icon">
+</head>
+
+
+<body>
+	<!--- audio --->
+	<div>
+		<audio id="sound" autoplay>
+			<source src="Source_Files/miku" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+		<script>
+			function playSound() {
+				const audio = document.getElementById('sound');
+				audio.play();
+			}
+			window.addEventListener('load', playSound);
+		</script>
+
+	</div>
+
+	<div class="hamburger">
+		<div class="menu-toggle" id="menuToggle">
+			<div class="menu-icon"></div>
+		</div>
+
+		<div class="overlay" id="overlay"></div>
+
+		<div>
+			<button class="arrow-button" onclick="goBack()">QBack</button>
+		</div>
+		<div class="side-panel" id="sidePanel">
+			<div class="close-icon" id="closeIcon">X</div>
+			<a class="side-panel-text" href="index.html">Home</a>
+			<a class="side-panel-text" href="about.html">About</a>
+			<a class="side-panel-text" href="services.html">Services</a>
+			<a class="side-panel-text" href="contact.html">Contact</a>
+		</div>
+
+		<div id="panel-side" style="display:none;"></div>
+		<script src="js/hamborgor.js"></script>
+	</div>
+
+	<div class="grey-box">
+		<a id="miku-flip" href="index.html"> <img class="miku-box"
+				src="https://foxtrot.nyacat.moe/art/sprites/mikubit.png">
+		</a>
+		<a href="index.html">
+			<h1 class="miku-text">Miku Marketing LLC.</h1>
+		</a>
+	</div>
+
+	<div id="ad">
+		<img id="miku_ad" src="">
+	</div>
+
+	<!--  this is just a test/consept -->
+
+	<style>
+		#ad {
+			background-color: #ffffff;
+			width: 600px;
+			height: 350px;
+			background-size: cover;
+			overflow: clip;
+		}
+
+		.side {
+			position: fixed;
+			right: 0;
+			top: 0;
+			height: 100%;
+			padding: 20vh 20px;
+			display: block;
+			background-color: gray;
+		}
+	</style>
+
+
+
+	<div class="side">
+		<label onchange="update_ad()" for="background">background</label>
+		<select id="background_seleect">
+			<option value="amongus">amongus</option>
+			<option value="besties">besties</option>
+			<option value="work">work</option>
+		</select>
+		<br>
+
+		<label for="miku">miku</label>
+		<select id="miku_seleect">
+			<option value="what">what</option>
+			<option value="weee">weee</option>
+
+		</select>
+		<br>
+
+		<button>drop in cart</button>
+	</div>
+
+	<script>
+		var background_list = {
+			"amongus": {
+				img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.450ldWV0VHGpztWYdGiVkAHaEJ%26pid%3DApi&f=1&ipt=c1e0be4b097e7c06e6cf5f4e&ipo=images",
+				price: 5
+			},
+			"besties": {
+				img: "https://wallpaperaccess.com/full/4247627.jpg",
+				price: 2
+			},
+			"work": {
+				img: "Source_Files/ohgod.png",
+				price: 2
+			}
+		};
+
+		var miku_list = {
+			"what": {
+				img: "Source_Files/hatsuneChibi2.png",
+				price: 2
+			},
+			"weee": {
+				img: "Source_Files/hatsuneChibi3.png",
+				price: 5
+			},
+		};
+
+		var selected = {
+			"background": "amongus",
+			"miku": "what"
+		}
+
+		var add = document.getElementById("ad");
+		var miku = document.getElementById("miku_ad");
+
+		var backselect = document.getElementById("background_seleect");
+		var mikuselect = document.getElementById("miku_seleect");
+
+		function update_ad() {
+
+
+			add.style["background-image"] = "url(" + background_list[selected.background].img + ")";
+
+			miku.src = miku_list[selected.miku].img
+		}
+
+		backselect.addEventListener("change", (event) => {
+			selected.background = `${event.target.value}`;
+			update_ad()
+		});
+
+		mikuselect.addEventListener("change", (event) => {
+			selected.miku = `${event.target.value}`;
+			update_ad()
+		});
+
+		update_ad()
+	</script>
+
+	<footer></footer>
+</body>
+
+</html>

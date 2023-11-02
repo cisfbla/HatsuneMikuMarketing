@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="cart.css">
+	<meta charset="UTF-8">
+	<title>Miku Marketing LLC.</title>
+	<link rel="icon" href="Source_Files/mikubit.ico" type="image/x-icon">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+
+<body onload="create_list()">
+	<!--- audio --->
+	<div>
+		<audio id="sound" autoplay>
+			<source src="Source_Files/miku" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+		<script>
+			function playSound() {
+				const audio = document.getElementById('sound');
+				audio.play();
+			}
+			window.addEventListener('load', playSound);
+		</script>
+
+	</div>
+
+	<div class="hamburger">
+		<div class="overlay" id="overlay"></div>
+
+		<div id="panel-side" style="display:none;"></div>
+		<script src="js/hamborgor.js"></script>
+	</div>
+
+	<!--- Site Header --->
+	<div class="grey-box">
+		<div class="logo">
+			<a class="miku-flip" onclick="open_dropburger()">
+				<img class="miku-box" src="Source_Files/mikubit.png">
+			</a>
+			<a>
+				<h1 class="miku-text">Miku Marketing LLC.</h1>
+			</a>
+			<div class="cart-container">
+				<a class="cart-icon" href="/cart.html">
+					<i class="fas fa-shopping-cart"></i>
+					<span id="cart_count">0</span>
+				</a>
+			</div>
+		</div>
+
+		<div id="links">
+			<a class="side-panel-text" href="index.html">Home</a>
+			<a class="side-panel-text" href="about.html">About</a>
+			<a class="side-panel-text" href="services.html">Services</a>
+			<a class="side-panel-text" href="contact.html">Contact</a>
+		</div>
+		<div class="dropdown-test">
+			<div onclick="open_dropburger()" class="dropdown-arrow">
+				<a class="drop-flip">^</a>
+			</div>
+		</div>
+
+
+		<script src="/js/dropdown.js"></script>
+	</div>
+
+	<div class="content">
+		<div class="box">
+			<button class="debug-button"
+				onclick="add_to_cart(` pog miku :3`, `Source_Files/mikuPic1.png` , 500, 1);create_list();">add miku
+			</button>
+
+			<button class="debug-button"
+				onclick="add_to_cart(` rad miku :3`, `Source_Files/mikuAmbassator.png` , 200.01, 1);create_list();">add
+				miku but like rad
+			</button>
+
+			<button class="debug-button" onclick="clear_cart();create_list();">eraticate all mikus
+			</button>
+
+			<div class="cart_stuff">
+				<div id="cart_list">
+				</div>
+				<div id="place">
+					<a>total: <a id="totalmikurama"></a></a>
+					<br>
+					<br>
+					<div>
+						<a id="buut" href="checkout.html">check out</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="site-footer-unique">
+		<img class="miku-footer" src="https://foxtrot.nyacat.moe/art/sprites/mikubit.png">
+		<p class="miku-footer-txt">© 2023 Miku Marketing LLC. </p>
+		<p>
+			<a href="index.html">Home</a>
+			<a href="about.html">About</a>
+			<a href="services.html">Services</a>
+			<a href="contact.html">Contact</a>
+			<a href="copyright.html">Copyright</a>
+		</p>
+		<p style="font-size:0.5vw;">Disclaimer: Miku Marketing is not a real business, this site is for use in website
+			building competition ONLY. All rights reserved by their original creators</p>
+	</div>
+
+	<script src="js/cart.js"></script>
+</body>
+
+</html>

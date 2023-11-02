@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="cart.css">
+	<meta charset="UTF-8">
+	<title>Miku Marketing LLC.</title>
+	<link rel="icon" href="Source_Files/mikubit.ico" type="image/x-icon">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+
+<body onload="clear_cart();">
+	<!--- audio --->
+	<div>
+		<audio id="sound" autoplay>
+			<source src="Source_Files/miku" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+		<script>
+			function playSound() {
+				const audio = document.getElementById('sound');
+				audio.play();
+			}
+			window.addEventListener('load', playSound);
+		</script>
+
+	</div>
+
+	<div class="hamburger">
+		<div class="overlay" id="overlay"></div>
+
+		<div id="panel-side" style="display:none;"></div>
+		<script src="js/hamborgor.js"></script>
+	</div>
+
+	<!--- Site Header --->
+	<div class="grey-box">
+		<div class="logo">
+			<a class="miku-flip" onclick="open_dropburger()">
+				<img class="miku-box" src="Source_Files/mikubit.png">
+			</a>
+			<a>
+				<h1 class="miku-text">Miku Marketing LLC.</h1>
+			</a>
+			<div class="cart-container">
+				<a class="cart-icon" href="/cart.html">
+					<i class="fas fa-shopping-cart"></i>
+					<span id="cart_count">0</span>
+				</a>
+			</div>
+		</div>
+
+		<div id="links">
+			<a class="side-panel-text" href="index.html">Home</a>
+			<a class="side-panel-text" href="about.html">About</a>
+			<a class="side-panel-text" href="services.html">Services</a>
+			<a class="side-panel-text" href="contact.html">Contact</a>
+		</div>
+		<div class="dropdown-test">
+			<div onclick="open_dropburger()" class="dropdown-arrow">
+				<a class="drop-flip">^</a>
+			</div>
+		</div>
+
+
+		<script src="/js/dropdown.js"></script>
+	</div>
+
+	<div class="content" style="margin-bottom: 32.8vh;">
+		<div class="box" style="margin-bottom: 12.5%;">
+      <div class="contact-txt-container">
+        <label for="email"></label>
+        <input type="text" id="email" name="emailaddr" placeholder="Credit Card Number">
+
+        <label for="subject"></label>
+        <input type="text" id="sub" name="subject" placeholder="CVV">
+
+        <label for="txt"></label>
+        <textarea id="txt" name="text" placeholder="Expiration"></textarea>
+
+        <input type="submit" value="Submit" onclick="refreshPage(); alert(`Your Order has been placed! It will be shipped in up to 10 business days!`);">
+      </div>
+
+      <script>
+        function refreshPage(){
+            window.location.reload();
+        } 
+      </script>
+		</div>
+	</div>
+
+	<div class="site-footer-unique">
+		<img class="miku-footer" src="https://foxtrot.nyacat.moe/art/sprites/mikubit.png">
+		<p class="miku-footer-txt">© 2023 Miku Marketing LLC. </p>
+		<p>
+			<a href="index.html">Home</a>
+			<a href="about.html">About</a>
+			<a href="services.html">Services</a>
+			<a href="contact.html">Contact</a>
+			<a href="copyright.html">Copyright</a>
+		</p>
+		<p style="font-size:0.5vw;">Disclaimer: Miku Marketing is not a real business, this site is for use in website
+			building competition ONLY. All rights reserved by their original creators</p>
+	</div>
+
+	<script src="js/cart.js"></script>
+</body>
+
+</html>
